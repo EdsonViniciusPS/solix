@@ -1,0 +1,60 @@
+/* Máscara escura semi-transparente sobre o slider */
+#rev_slider_1_1 {
+    position: relative;
+}
+#rev_slider_1_1::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(77, 41, 207, 0.6); /* ajuste a cor e opacidade aqui */
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Garante que todos os backgrounds dos slides recebam a máscara */
+#rev_slider_1_1 .tp-bgimg.defaultimg::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(37, 12, 129, 0.6); /* ajuste a cor e opacidade aqui */
+    z-index: 2;
+    pointer-events: none;
+    display: block;
+}
+#rev_slider_1_1 .tp-bgimg.defaultimg {
+    position: relative !important;
+}
+
+/* Remove o ::after, usa elemento filho para garantir instantaneidade */
+#rev_slider_1_1 .tp-bgimg {
+    position: absolute !important;
+    overflow: hidden;
+}
+#rev_slider_1_1 .tp-bgimg .slider-mask {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(77, 41, 207, 0.6); /* ajuste a cor e opacidade aqui */
+    z-index: 2;
+    pointer-events: none;
+    display: block;
+}
+
+/* Máscara estática sobre o slider */
+#rev_slider_1_1_wrapper {
+    position: relative;
+}
+.slider-static-mask {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(77, 41, 207, 0.6); /* ajuste a cor e opacidade aqui */
+    z-index: 20;
+    pointer-events: none;
+}
